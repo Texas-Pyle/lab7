@@ -51,8 +51,16 @@ public abstract class Restaurant
      *    "(number of orders in restaurant order list) orders left. Working on: (the toString() of the next order to be completed)"
      */
 	public String getCurrentStatus()
-	{
+	{	String output = "";
 		//TODO: implement this
+		if(numberRemainingOrder() == 0) {
+			output = "No orders left.";
+			
+		}else {
+			output = String.format("%d ordersleft. Working on %s of the next orders to be completed",
+									numberRemainingOrder(),checkNextCompletedOrder());
+		}
+		return output;
 	}
     /**
      * Completes an order by updating the underlying data structure of the restaurant. Each restaurant uses this
@@ -81,6 +89,8 @@ public abstract class Restaurant
 	public String completeOrder(int timeCompleted)
 	{
 		//TODO: implement this
+		
+		
 	}
 	
 }

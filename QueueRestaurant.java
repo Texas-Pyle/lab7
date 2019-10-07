@@ -22,6 +22,10 @@ public class QueueRestaurant extends Restaurant{
 	public QueueRestaurant(int maxSize)
 	{
 		//TODO: implement this
+		orderList = new Order[maxSize];
+		head = 0;
+		tail = 0;
+		numOrders = 0;
 	}
     /**
      * Add an order to the restaurant. If there is no more room (number of tickets in the restaurant == maxSize of
@@ -31,8 +35,15 @@ public class QueueRestaurant extends Restaurant{
      * @return 
      */
 	public boolean addOrder(Order order)
-	{
+	{boolean OrderAdded = false;
 		//TODO: implement this
+		if (orderList.length != numOrders) {
+			orderList[numOrders] = order;
+			OrderAdded = true;
+			numOrders ++;
+			
+		}
+		return OrderAdded;
 	}
     /**
      * [Internal Code - This is not required by the specification but can be a useful construct.]
